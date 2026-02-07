@@ -194,21 +194,31 @@ section p {
 }
 
 /* =====================================================
-   CONTACT FORM
+   CONTACT SECTION & FORM
    ===================================================== */
-form {
-  max-width: 600px;
+.input-group {
   display: grid;
-  gap: 14px;
-  margin-top: 25px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 input, textarea {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 14px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
   border-radius: var(--radius);
   color: var(--text-light);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.15);
 }
 
 /* =====================================================
@@ -246,7 +256,7 @@ footer ul li {
   color: var(--muted);
 }
 
-/* SOCIAL ICONS - Fixed Transition & Glow */
+/* SOCIAL ICONS */
 .social-icons {
   display: flex;
   gap: 18px;
@@ -257,7 +267,6 @@ footer ul li {
   color: var(--muted);
   font-size: 22px;
   text-decoration: none;
-  /* Ensure transition applies to color, transform, and shadow */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: inline-block;
 }
@@ -281,7 +290,7 @@ footer ul li {
   transform: translateX(5px);
 }
 
-/* COPYRIGHT & TAGLINE - Theme Corrected */
+/* COPYRIGHT & TAGLINE */
 .bottom-note {
   text-align: center;
   padding-top: 25px;
@@ -293,34 +302,17 @@ footer ul li {
 }
 
 .bottom-note strong {
-  color: var(--cyan); /* Electric Cyan instead of Red */
+  color: var(--cyan); 
   text-transform: uppercase;
   font-weight: 800;
   margin-left: 5px;
-  text-shadow: 0 0 10px rgba(0, 230, 255, 0.5); /* Neon Cyan Glow */
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
 }
 
-
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero img {
-    margin-top: 30px;
-  }
-
-  .founder {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-   }
+/* RESPONSIVE FIXES */
+@media (max-width: 800px) {
+  .input-group { grid-template-columns: 1fr; }
+  .footer-grid { flex-direction: column; text-align: center; }
+  .social-icons { justify-content: center; }
+  .legal-links li a:hover { transform: none; }
+}
