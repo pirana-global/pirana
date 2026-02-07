@@ -225,7 +225,7 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
-  padding-bottom: 40px; /* Space before the bottom note */
+  padding-bottom: 40px; 
 }
 
 footer h4 {
@@ -246,6 +246,33 @@ footer ul li {
   color: var(--muted);
 }
 
+/* --- ADD THIS SECTION BELOW --- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: var(--muted);
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--cyan);
+  transform: translateY(-3px);
+  text-shadow: 0 0 8px var(--cyan); /* Electric glow */
+}
+
+/* Optional: Make YouTube icon red on hover */
+.social-icons a:hover .fa-youtube {
+  color: var(--red);
+  text-shadow: 0 0 8px var(--red);
+}
+/* ------------------------------ */
+
 /* Updated Legal Links Styling */
 .legal-links li a {
   color: var(--muted);
@@ -256,7 +283,7 @@ footer ul li {
 
 .legal-links li a:hover {
   color: var(--cyan);
-  transform: translateX(5px); /* Subtle slide effect on hover */
+  transform: translateX(5px);
 }
 
 /* COPYRIGHT & TAGLINE */
@@ -272,6 +299,7 @@ footer ul li {
   color: var(--red);
   letter-spacing: 1px;
 }
+
 
 /* =====================================================
    RESPONSIVE
