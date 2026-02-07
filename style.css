@@ -212,7 +212,7 @@ input, textarea {
 }
 
 /* =====================================================
-   FOOTER
+   FOOTER & SOCIAL ICONS
    ===================================================== */
 footer {
   background: var(--bg-dark);
@@ -246,34 +246,29 @@ footer ul li {
   color: var(--muted);
 }
 
-/* --- ADD THIS SECTION BELOW --- */
+/* SOCIAL ICONS - Fixed Transition & Glow */
 .social-icons {
   display: flex;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 18px;
+  margin-top: 20px;
 }
 
 .social-icons a {
   color: var(--muted);
-  font-size: 20px;
+  font-size: 22px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  /* Ensure transition applies to color, transform, and shadow */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
 }
 
 .social-icons a:hover {
   color: var(--cyan);
-  transform: translateY(-3px);
-  text-shadow: 0 0 8px var(--cyan); /* Electric glow */
+  transform: translateY(-5px) scale(1.1);
+  text-shadow: 0 0 12px var(--cyan);
 }
 
-/* Optional: Make YouTube icon red on hover */
-.social-icons a:hover .fa-youtube {
-  color: var(--red);
-  text-shadow: 0 0 8px var(--red);
-}
-/* ------------------------------ */
-
-/* Updated Legal Links Styling */
+/* LEGAL LINKS */
 .legal-links li a {
   color: var(--muted);
   text-decoration: none;
@@ -286,18 +281,23 @@ footer ul li {
   transform: translateX(5px);
 }
 
-/* COPYRIGHT & TAGLINE */
+/* COPYRIGHT & TAGLINE - Theme Corrected */
 .bottom-note {
   text-align: center;
   padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 13px;
-  color: #555;
+  color: var(--muted);
+  letter-spacing: 1px;
 }
 
 .bottom-note strong {
-  color: var(--red);
-  letter-spacing: 1px;
+  color: var(--cyan); /* Electric Cyan instead of Red */
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-left: 5px;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.5); /* Neon Cyan Glow */
 }
 
 
