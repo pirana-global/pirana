@@ -20,6 +20,47 @@
   <!-- ICONS & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1e90ff, #0066ff);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      border: 2px solid #1e90ff;
+      color: #1e90ff;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: #1e90ff;
+      color: #ffffff;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,12 +87,18 @@
       We design intelligent systems for startups, businesses, and creators
       who value speed, reliability, and ownership.
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpX0yll5P-tIaaFgG3CnkyT-r1iWHrwrnZpfiTV2etBf3vKw/viewform?usp=header">
-      Book a Consultation
-    </a>
-    <a href="#careers" class="btn btn-outline">
-      Join PIRANA
-    </a>
+
+    <div class="hero-buttons">
+      <a href="https://forms.gle/mwKEVBSoZdG5Q7kN9"
+         target="_blank"
+         class="btn btn-primary">
+        Book a Consultation
+      </a>
+
+      <a href="#careers" class="btn btn-outline">
+        Join PIRANA
+      </a>
+    </div>
   </div>
 </section>
 
