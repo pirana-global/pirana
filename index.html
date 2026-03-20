@@ -586,7 +586,7 @@ footer{border-top:1px solid var(--border);background:var(--navy);position:relati
     <a href="https://www.instagram.com/pirana.global" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://youtube.com/@pirana.global" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
     <span class="top-bar-divider"></span>
-    <a href="mailto:connect.pirana@gmail.com" title="Email" style="font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--white2);text-decoration:none">connect.pirana@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#62010d0c0c0701164c120b10030c0322050f030b0e4c010d0f" title="Email" style="font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--white2);text-decoration:none"><span class="__cf_email__" data-cfemail="32515d5c5c5751461c425b40535c5372555f535b5e1c515d5f">[email&#160;protected]</span></a>
   </div>
 </div>
 
@@ -706,7 +706,7 @@ footer{border-top:1px solid var(--border);background:var(--navy);position:relati
     <div class="stats-bar-label">Client Ownership</div>
   </div>
   <div class="stats-bar-item">
-    <div class="stats-bar-num">24<span style="font-size:2rem">/7</span></div>
+    <div class="stats-bar-num" data-static="true">24/7</div>
     <div class="stats-bar-label">System Monitoring</div>
   </div>
 </div>
@@ -1107,7 +1107,7 @@ footer{border-top:1px solid var(--border);background:var(--navy);position:relati
   <div class="contact-grid">
     <div class="reveal">
       <h2 class="sec-title" style="margin-bottom:38px">Let's Build<br>Together.</h2>
-      <div class="c-block"><div class="c-label">Email</div><div class="c-val"><a href="mailto:connect.pirana@gmail.com">connect.pirana@gmail.com</a></div></div>
+      <div class="c-block"><div class="c-label">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection#b9dad6d7d7dcdacd97c9d0cbd8d7d8f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="42212d2c2c2721366c322b30232c2302252f232b2e6c212d2f">[email&#160;protected]</span></a></div></div>
       <div class="c-block"><div class="c-label">Website</div><div class="c-val"><a href="https://pirana-global.github.io/pirana/" target="_blank">pirana-global.github.io/pirana</a></div></div>
       <div class="c-block"><div class="c-label">Operations</div><div class="c-val">Global · Remote-First</div></div>
       <div class="c-block"><div class="c-label">Founded</div><div class="c-val">2025 · IT Services & AI Consulting</div></div>
@@ -1144,7 +1144,7 @@ footer{border-top:1px solid var(--border);background:var(--navy);position:relati
         <a href="https://www.instagram.com/pirana.global" target="_blank" class="f-soc" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://youtube.com/@pirana.global" target="_blank" class="f-soc" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
-      <div style="margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--muted)"><a href="mailto:connect.pirana@gmail.com" style="color:var(--muted2);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted2)'"><i class="fa-solid fa-envelope" style="margin-right:6px"></i>connect.pirana@gmail.com</a></div>
+      <div style="margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--muted)"><a href="/cdn-cgi/l/email-protection#30535f5e5e5553441e405942515e5170575d51595c1e535f5d" style="color:var(--muted2);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted2)'"><i class="fa-solid fa-envelope" style="margin-right:6px"></i><span class="__cf_email__" data-cfemail="f4979b9a9a919780da849d86959a95b49399959d98da979b99">[email&#160;protected]</span></a></div>
     </div>
     <!-- Services -->
     <div class="f-col">
@@ -1202,7 +1202,7 @@ footer{border-top:1px solid var(--border);background:var(--navy);position:relati
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Cursor ──
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -1257,8 +1257,10 @@ const statsObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.querySelectorAll('.stats-bar-num').forEach(el=>{
+        // Skip static elements like 24/7
+        if(el.dataset.static) return;
         const txt=el.textContent;
-        const num=parseInt(txt.replace(/\D/g,''));
+        const num=parseInt(txt.replace(/[^0-9]/g,''));
         const suffix=txt.replace(/[0-9]/g,'');
         animateCounter(el,num,suffix);
       });
